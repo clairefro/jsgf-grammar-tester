@@ -1,7 +1,7 @@
 # JSGF Grammar Tester
 A tool for testing jsgf grammars with speech recognition.
 
-Only supported in Chrome 33+ browsers as it uses .
+Only supported in Chrome 33+ browsers as it uses webkit speech recognition.
 
 
 ### Run locally
