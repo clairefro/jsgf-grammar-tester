@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JSGF Grammar Tester</title>
+  <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1">
+
+  <!-- animate css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <div class="container">
+    <div class="wrapper">
+      <h1>JSGF Grammar Tester</h1>
+      <p>Paste your JSGF grammar in the first text area.</p>
+
+      <h3>Define grammar:</h3>
+       <textarea  spellcheck="false" name="grammar-input" id="grammar-input" rows="15" cols="50">
+#JSGF V1.0;
+
+grammar com.acme.commands;
+
+public <startPolite> = (please | kindly | could you ) *;
+public <endPolite> = [ please | thanks | thank you ];
+
+public <basicCmd> = <startPolite> <command> <endPolite>;
+
+<command> = <action> <object>;
+<action> = /10/ open |/2/ close |/1/ delete |/1/ move;
+<object> = [the | a] (window | file | menu);
+
+        </textarea>
+      <div class="input-container">
+        <div class="lang-select-container">
+          <p>in: </p>
+          <select name="lang" id="lang-select">
+            <option value="en-US">English (North America)</option>
+            <option value="en-GB">English (GB)</option>
+            <option value="fr-FR">Français</option>
+            <option value="de-DE">Deutsch</option>
+            <option value="ja-JA">日本語</option>
+            <option value="es-ES">Español (España)</option>
+            <option value="it-IT">Italiano</option>
+            <option value="ko-KR">한국어 </option>
+            <option value="ru-RU">Русский</option>
+            <option value="zh">普通话（中国大陆)</option>
+          </select>
+        </div>
+        <button id="stt-button">Recognize</button>
+        <br/>
+        <h3>Output:</h3>
+        <textarea name="stt-text" id="stt-textbox" rows="5" cols="50" placeholder="click 'Recognize' to start speech recognition "></textarea>
+        
+      </div>
+
+    </div>
+  </div>
+
+  <!-- set script type to "module" to allow importing -->
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
