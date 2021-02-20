@@ -19,7 +19,6 @@ recognizeButton.addEventListener('click', (e) => {
 
   const lang = langSelector.value;
   const grammarStr = grammarInput.value;
-  console.log({grammarStr})
 
   // call our method to get transcript from speech
   recognizeSpeech(lang, grammarStr)
